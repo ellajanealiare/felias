@@ -1,0 +1,325 @@
+<html><head><base href="https://socialconnect.app/messages">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SocialConnect - Messages</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 0;
+        color: #1c1e21;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .navbar {
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #1877f2;
+    }
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+    .nav-link {
+        color: #65676b;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+    .nav-link:hover, .nav-link.active {
+        background-color: #f0f2f5;
+        color: #1877f2;
+    }
+    .messages-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        display: flex;
+        height: calc(100vh - 100px);
+    }
+    .messages-list {
+        width: 30%;
+        border-right: 1px solid #ccc;
+        overflow-y: auto;
+    }
+    .message-view {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+    .message-header {
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .message-content {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .message-input {
+        display: flex;
+        padding: 20px;
+        border-top: 1px solid #ccc;
+    }
+    .message-input input {
+        flex-grow: 1;
+        margin-right: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+    }
+    .message-input button {
+        background-color: #1877f2;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    .message-input button:hover {
+        background-color: #166fe5;
+    }
+    .message-item {
+        padding: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        border-bottom: 1px solid #f0f2f5;
+    }
+    .message-item:hover, .message-item.active {
+        background-color: #f0f2f5;
+    }
+    .message-item-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+        float: left;
+    }
+    .message-item-content {
+        overflow: hidden;
+    }
+    .message-item-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .message-item-preview {
+        color: #65676b;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .message-bubble {
+        max-width: 70%;
+        padding: 10px 15px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+    }
+    .message-sent {
+        background-color: #1877f2;
+        color: white;
+        align-self: flex-end;
+    }
+    .message-received {
+        background-color: #f0f2f5;
+        align-self: flex-start;
+    }
+    .message-time {
+        font-size: 12px;
+        color: #65676b;
+        margin-top: 5px;
+        text-align: right;
+    }
+    .no-messages {
+        text-align: center;
+        color: #65676b;
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="logo">SocialConnect</div>
+        <div class="nav-links">
+            <a href="https://socialconnect.app/home" class="nav-link">Home</a>
+            <a href="https://socialconnect.app/profile" class="nav-link">Profile</a>
+            <a href="https://socialconnect.app/messages" class="nav-link active">Messages</a>
+            <a href="https://socialconnect.app/notifications" class="nav-link">Notifications</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="messages-container">
+        <div class="messages-list" id="messagesList">
+            <!-- Messages list will be dynamically added here -->
+        </div>
+        <div class="message-view">
+            <div class="message-header" id="messageHeader"></div>
+            <div class="message-content" id="messageContent">
+                <div class="no-messages">Select a conversation to start messaging</div>
+            </div>
+            <div class="message-input">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button id="sendMessageButton">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const messagesList = document.getElementById('messagesList');
+    const messageHeader = document.getElementById('messageHeader');
+    const messageContent = document.getElementById('messageContent');
+    const messageInput = document.getElementById('messageInput');
+    const sendMessageButton = document.getElementById('sendMessageButton');
+
+    let messages = [
+        {
+            id: 1,
+            user: "Emily Chen",
+            avatar: "https://placekitten.com/51/51",
+            lastMessage: "Hey, how are you?",
+            messages: [
+                { text: "Hi Ella! How's your day going?", sent: false, time: "10:30 AM" },
+                { text: "Hey Emily! It's going well, thanks for asking. How about yours?", sent: true, time: "10:32 AM" },
+                { text: "Pretty good! Just finished a big project at work.", sent: false, time: "10:35 AM" },
+                { text: "That's awesome! You must be relieved.", sent: true, time: "10:37 AM" },
+                { text: "Definitely! Want to grab coffee this weekend to celebrate?", sent: false, time: "10:40 AM" },
+                { text: "Sounds great! How about Saturday afternoon?", sent: true, time: "10:42 AM" },
+                { text: "Perfect! Let's meet at our usual spot at 2 PM?", sent: false, time: "10:45 AM" },
+                { text: "Sounds good to me. See you then!", sent: true, time: "10:47 AM" },
+                { text: "Looking forward to it!", sent: false, time: "10:50 AM" }
+            ]
+        },
+        {
+            id: 2,
+            user: "Michael Smith",
+            avatar: "https://placekitten.com/52/52",
+            lastMessage: "Did you see the new movie?",
+            messages: [
+                { text: "Hey Ella, have you seen the new superhero movie yet?", sent: false, time: "Yesterday 8:15 PM" },
+                { text: "Not yet, but I've heard great things about it! Have you?", sent: true, time: "Yesterday 8:20 PM" },
+                { text: "Yeah, I watched it last night. It was amazing!", sent: false, time: "Yesterday 8:22 PM" },
+                { text: "Oh cool! No spoilers please, I'm planning to see it this weekend.", sent: true, time: "Yesterday 8:25 PM" },
+                { text: "Don't worry, I won't spoil anything. You're going to love it!", sent: false, time: "Yesterday 8:27 PM" },
+                { text: "Can't wait! Maybe we can discuss it after I've seen it?", sent: true, time: "Yesterday 8:30 PM" },
+                { text: "Absolutely! Let me know when you've watched it.", sent: false, time: "Yesterday 8:32 PM" }
+            ]
+        },
+        {
+            id: 3,
+            user: "Sarah Jones",
+            avatar: "https://placekitten.com/53/53",
+            lastMessage: "Don't forget about tomorrow's meeting!",
+            messages: [
+                { text: "Hi Ella, just a reminder about our team meeting tomorrow at 10 AM.", sent: false, time: "Yesterday 5:00 PM" },
+                { text: "Thanks for the reminder, Sarah! I've got it in my calendar.", sent: true, time: "Yesterday 5:05 PM" },
+                { text: "Great! Don't forget to bring your project updates.", sent: false, time: "Yesterday 5:07 PM" },
+                { text: "Will do. I've prepared a short presentation. Anything else I should bring?", sent: true, time: "Yesterday 5:10 PM" },
+                { text: "That sounds perfect. No need for anything else.", sent: false, time: "Yesterday 5:12 PM" },
+                { text: "Alright, see you tomorrow then!", sent: true, time: "Yesterday 5:15 PM" },
+                { text: "See you tomorrow!", sent: false, time: "Yesterday 5:17 PM" }
+            ]
+        }
+    ];
+
+    function createMessageItem(message) {
+        const messageItem = document.createElement('div');
+        messageItem.className = 'message-item';
+        messageItem.innerHTML = `
+            <img src="${message.avatar}" alt="${message.user}" class="message-item-avatar" width="50" height="50">
+            <div class="message-item-content">
+                <div class="message-item-name">${message.user}</div>
+                <div class="message-item-preview">${message.lastMessage}</div>
+            </div>
+        `;
+        messageItem.addEventListener('click', () => selectConversation(message));
+        return messageItem;
+    }
+
+    function renderMessageList() {
+        messagesList.innerHTML = '';
+        messages.forEach(message => {
+            const messageItem = createMessageItem(message);
+            messagesList.appendChild(messageItem);
+        });
+    }
+
+    function selectConversation(conversation) {
+        messageHeader.textContent = conversation.user;
+        renderConversation(conversation);
+        document.querySelectorAll('.message-item').forEach(item => item.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+    }
+
+    function renderConversation(conversation) {
+        messageContent.innerHTML = '';
+        conversation.messages.forEach(message => {
+            const messageBubble = document.createElement('div');
+            messageBubble.className = `message-bubble ${message.sent ? 'message-sent' : 'message-received'}`;
+            messageBubble.innerHTML = `
+                ${message.text}
+                <div class="message-time">${message.time}</div>
+            `;
+            messageContent.appendChild(messageBubble);
+        });
+        messageContent.scrollTop = messageContent.scrollHeight;
+    }
+
+    function sendMessage() {
+        const text = messageInput.value.trim();
+        if (text && messageHeader.textContent) {
+            const conversation = messages.find(m => m.user === messageHeader.textContent);
+            if (conversation) {
+                const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                conversation.messages.push({ text, sent: true, time: currentTime });
+                conversation.lastMessage = text;
+                renderConversation(conversation);
+                renderMessageList();
+                messageInput.value = '';
+                messageContent.scrollTop = messageContent.scrollHeight;
+            }
+        }
+    }
+
+    renderMessageList();
+
+    sendMessageButton.addEventListener('click', sendMessage);
+
+    messageInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+});
+</script>
+</body></html>
