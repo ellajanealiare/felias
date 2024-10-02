@@ -1,0 +1,274 @@
+<html><head><base href="https://socialmediasite.com/messages">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ConnectSphere - Ella Felias's Messages</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    height: 100%;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    height: calc(100% - 60px);
+  }
+  header {
+    background-color: #1877f2;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  .chat-list {
+    width: 300px;
+    background-color: white;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+  }
+  .chat-item {
+    padding: 15px;
+    border-bottom: 1px solid #bb8080;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .chat-item:hover {
+    background-color: #f5f5f5;
+  }
+  .chat-item.active {
+    background-color: #e6f2ff;
+  }
+  .chat-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    float: left;
+  }
+  .chat-info {
+    overflow: hidden;
+  }
+  .chat-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .chat-preview {
+    font-size: 14px;
+    color: #65676b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chat-window {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  .chat-header {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+  }
+  .chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  .message {
+    margin-bottom: 15px;
+    max-width: 70%;
+  }
+  .message-content {
+    padding: 10px;
+    border-radius: 18px;
+    display: inline-block;
+  }
+  .message.received .message-content {
+    background-color: #f0f0f0;
+  }
+  .message.sent {
+    margin-left: auto;
+  }
+  .message.sent .message-content {
+    background-color: #0084ff;
+    color: white;
+  }
+  .message-time {
+    font-size: 12px;
+    color: #65676b;
+    margin-top: 5px;
+  }
+  .chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+  }
+  .chat-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  .chat-input button {
+    background-color: #1877f2;
+    color: rgb(128, 31, 31);
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .chat-input button:hover {
+    background-color: #166fe5;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">ELLAS MEDIA</div>
+      <div class="nav-links">
+        <a href="/homC:\Users\PC 15\Downloads\ellajnehbnjcvn\elllaaaalalal\home.htmle">Home</a>
+        <a href="/profiC:\Users\PC 15\Downloads\ellajnehbnjcvn\elllaaaalalal\profile.htmlle">Profile</a>
+        <a href="/frienC:\Users\PC 15\Downloads\ellajnehbnjcvn\elllaaaalalal\profile.htmlds">Friends</a>
+        <a href="/messC:\Users\PC 15\Downloads\ellajnehbnjcvn\elllaaaalalal\messages.htmlages">Messages</a>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <div class="chat-list">
+      <div class="chat-item active">
+        <img src="https://avatars.githubusercontent.com/u/23456789" alt="Sarah Lee's avatar" class="chat-avatar" width="50" height="50">
+        <div class="chat-info">
+          <div class="chat-name">jayven</div>
+          <div class="chat-preview">Hey Ella, humana kas com?</div>
+        </div>
+      </div>
+      <div class="chat-item">
+        <img src="https://avatars.githubusercontent.com/u/34567890" alt="Mike Chen's avatar" class="chat-avatar" width="50" height="50">
+        <div class="chat-info">
+          <div class="chat-name">sir</div>
+          <div class="chat-preview">Dugaya ba nimo nahuman?</div>
+        </div>
+      </div>
+      <div class="chat-item">
+        <img src="https://avatars.githubusercontent.com/u/45678901" alt="Emily Wong's avatar" class="chat-avatar" width="50" height="50">
+        <div class="chat-info">
+          <div class="chat-name">yanyan</div>
+          <div class="chat-preview">gwapaha nimo te oii</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chat-window">
+      <div class="chat-header">
+        MANG SUYOPAY
+      </div>
+      <div class="chat-messages">
+        <div class="message received">
+          <div class="message-content">HAHAHAHHAHHHAHH</div>
+          <div class="message-time">10:30 AM</div>
+        </div>
+        <div class="message sent">
+          <div class="message-content">SIRRRR UNSAON MANIIIII?</div>
+          <div class="message-time">10:32 AM</div>
+        </div>
+        <div class="message received">
+          <div class="message-content">DAWATA NI SIR HA BANTY KALANG HUHUHU</div>
+          <div class="message-time">10:35 AM</div>
+        </div>
+        <div class="message sent">
+          <div class="message-content" HUHUHU GWAPA KO</div>
+          <div class="message-time">10:37 AM</div>
+        </div>
+        <div class="message received">
+          <div class="message-content">Perfect! KITA RATA DDTU</div>
+          <div class="message-time">10:40 AM</div>
+        </div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type a message...">
+        <button>Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const chatItems = document.querySelectorAll('.chat-item');
+    const chatMessages = document.querySelector('.chat-messages');
+    const chatInput = document.querySelector('.chat-input input');
+    const sendButton = document.querySelector('.chat-input button');
+
+    chatItems.forEach(item => {
+      item.addEventListener('click', () => {
+        chatItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        const chatName = item.querySelector('.chat-name').textContent;
+        document.querySelector('.chat-header').textContent = chatName;
+        // Here you would typically load the chat history for the selected contact
+        // For this example, we'll just clear the chat
+        chatMessages.innerHTML = '';
+      });
+    });
+
+    function sendMessage() {
+      const messageText = chatInput.value.trim();
+      if (messageText) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message', 'sent');
+        messageElement.innerHTML = `
+          <div class="message-content">${messageText}</div>
+          <div class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+        `;
+        chatMessages.appendChild(messageElement);
+        chatInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    }
+
+    sendButton.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+    // Simulate receiving a message after a delay
+    setTimeout(() => {
+      const receivedMessage = document.createElement('div');
+      receivedMessage.classList.add('message', 'received');
+      receivedMessage.innerHTML = `
+        <div class="message-content">Great! Can't wait to catch up tomorrow!</div>
+        <div class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+      `;
+      chatMessages.appendChild(receivedMessage);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 5000);
+  </script>
+</body></html>

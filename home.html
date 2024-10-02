@@ -1,0 +1,357 @@
+<html><head><base href="https://socialmediasite.com/home">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ConnectSphere - Home</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+  }
+  header {
+    background-color: #1877f2;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  .content-box {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .profile-summary {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .profile-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  .profile-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .create-post textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: none;
+  }
+  .create-post button {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .post {
+    border-bottom: 1px solid #e4e6eb;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  .post:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  .post-author {
+    font-weight: bold;
+  }
+  .post-timestamp {
+    font-size: 12px;
+    color: #65676b;
+    margin-left: 10px;
+  }
+  .post-content {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #65676b;
+  }
+  .post-action {
+    cursor: pointer;
+  }
+  .post-action:hover {
+    text-decoration: underline;
+  }
+  .trending-topics, .friend-suggestions {
+    margin-bottom: 20px;
+  }
+  .topic, .friend-suggestion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .topic-icon, .friend-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e4e6eb;
+    font-size: 20px;
+  }
+  .friend-avatar {
+    object-fit: cover;
+  }
+  .topic-name, .friend-name {
+    font-weight: bold;
+  }
+  .add-friend-btn {
+    margin-left: auto;
+    background-color: #e4e6eb;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .add-friend-btn:hover {
+    background-color: #d8dadf;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">ConnectSphere</div>
+      <div class="nav-links">
+        <a href="/hoC:\Users\PC 15\Downloads\ellajnehbnjcvn\elllaaaalalal\home.htmlme">Home</a>
+        <a href="/profileC:\Users\PC 15\Downloads\ellajnehbnjcvn\elllaaaalalal\profile.html">Profile</a>
+        <a href="/friendC:\Users\PC 15\Downloads\ellajnehbnjcvn\elllaaaalalal\friends.htmls">Friends</a>
+        <a href="/messageC:\Users\PC 15\Downloads\ellajnehbnjcvn\elllaaaalalal\messages.htmls">Messages</a>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <aside class="left-sidebar">
+      <div class="content-box profile-summary">
+        <img src="https://avatars.githubusercontent.com/u/12345678" alt="Ella Felias's profile picture" class="profile-picture" width="60" height="60">
+        <div class="profile-name">Ella Felias</div>
+      </div>
+      <div class="content-box trending-topics">
+        <h3>Trending Topics</h3>
+        <div class="topic">
+          <div class="topic-icon">🌍</div>
+          <div class="topic-name">#ClimateAction</div>
+        </div>
+        <div class="topic">
+          <div class="topic-icon">💻</div>
+          <div class="topic-name">#TechInnovation</div>
+        </div>
+        <div class="topic">
+          <div class="topic-icon">🎨</div>
+          <div class="topic-name">#DigitalArt</div>
+        </div>
+        <div class="topic">
+          <div class="topic-icon">📚</div>
+          <div class="topic-name">#ContinuousLearning</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="content-box create-post">
+        <textarea placeholder="What's on your mind, Ella?"></textarea>
+        <button>Post</button>
+      </div>
+      <div class="content-box feed">
+        <div class="post">
+          <div class="post-header">
+            <img src="https://avatars.githubusercontent.com/u/23456789" alt="Sarah Lee's avatar" class="post-avatar" width="40" height="40">
+            <div class="post-author">Sarah Lee</div>
+            <div class="post-timestamp">2 hours ago</div>
+          </div>
+          <div class="post-content">
+            Just finished a 10k run! Feeling accomplished and energized. Who's up for a virtual running challenge next week? 🏃‍♀️💨 #Fitness #RunningCommunity
+          </div>
+          <div class="post-actions">
+            <span class="post-action">Like</span>
+            <span class="post-action">Comment</span>
+            <span class="post-action">Share</span>
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-header">
+            <img src="https://avatars.githubusercontent.com/u/34567890" alt="Mike Chen's avatar" class="post-avatar" width="40" height="40">
+            <div class="post-author">dianne</div>
+            <div class="post-timestamp">5 hours ago</div>
+          </div>
+          <div class="post-content">
+            Just launched my first machine learning model in production! It's been a challenging but rewarding journey. Any fellow ML enthusiasts want to share their experiences? 🤖🧠 #MachineLearning #AI
+          </div>
+          <div class="post-actions">
+            <span class="post-action">Like</span>
+            <span class="post-action">Comment</span>
+            <span class="post-action">Share</span>
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-header">
+            <img src="https://avatars.githubusercontent.com/u/45678901" alt="Emily Wong's avatar" class="post-avatar" width="40" height="40">
+            <div class="post-author">yanyan</div>
+            <div class="post-timestamp">Yesterday</div>
+          </div>
+          <div class="post-content">
+            Excited to announce that my artwork will be featured in the upcoming "Digital Dreamscapes" exhibition! If you're in New York next month, come check it out! 🎨🖼️ #DigitalArt #NYCEvents
+          </div>
+          <div class="post-actions">
+            <span class="post-action">Like</span>
+            <span class="post-action">Comment</span>
+            <span class="post-action">Share</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="right-sidebar">
+      <div class="content-box friend-suggestions">
+        <h3>People You May Know</h3>
+        <div class="friend-suggestion">
+          <img src="https://avatars.githubusercontent.com/u/56789012" alt="Alex Johnson's avatar" class="friend-avatar" width="40" height="40">
+          <div class="friend-name">jayven</div>
+          <button class="add-friend-btn">Add Friend</button>
+        </div>
+        <div class="friend-suggestion">
+          <img src="https://avatars.githubusercontent.com/u/67890123" alt="Sophia Garcia's avatar" class="friend-avatar" width="40" height="40">
+          <div class="friend-name">gwapo ko</div>
+          <button class="add-friend-btn">Add Friend</button>
+        </div>
+        <div class="friend-suggestion">
+          <img src="https://avatars.githubusercontent.com/u/78901234" alt="Ryan Patel's avatar" class="friend-avatar" width="40" height="40">
+          <div class="friend-name">dawata</div>
+          <button class="add-friend-btn">Add Friend</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    // Post creation
+    const postTextarea = document.querySelector('.create-post textarea');
+    const postButton = document.querySelector('.create-post button');
+    const feed = document.querySelector('.feed');
+
+    postButton.addEventListener('click', () => {
+      const content = postTextarea.value.trim();
+      if (content) {
+        const post = document.createElement('div');
+        post.className = 'post';
+        post.innerHTML = `
+          <div class="post-header">
+            <img src="https://avatars.githubusercontent.com/u/12345678" alt="Ella Felias's avatar" class="post-avatar" width="40" height="40">
+            <div class="post-author">Ella Felias</div>
+            <div class="post-timestamp">Just now</div>
+          </div>
+          <div class="post-content">${content}</div>
+          <div class="post-actions">
+            <span class="post-action">Like</span>
+            <span class="post-action">Comment</span>
+            <span class="post-action">Share</span>
+          </div>
+        `;
+        feed.insertBefore(post, feed.firstChild);
+        postTextarea.value = '';
+      }
+    });
+
+    // Like functionality
+    feed.addEventListener('click', (e) => {
+      if (e.target.classList.contains('post-action') && e.target.textContent === 'Like') {
+        e.target.textContent = 'Liked';
+        e.target.style.color = '#1877f2';
+      }
+    });
+
+    // Add friend functionality
+    document.querySelectorAll('.add-friend-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const friendName = e.target.previousElementSibling.textContent;
+        e.target.textContent = 'Requested';
+        e.target.disabled = true;
+        alert(`Friend request sent to ${friendName}!`);
+      });
+    });
+
+    // Infinite scroll simulation
+    window.addEventListener('scroll', () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
+        // Simulating loading more posts
+        setTimeout(() => {
+          const newPost = document.createElement('div');
+          newPost.className = 'post';
+          newPost.innerHTML = `
+            <div class="post-header">
+              <img src="https://avatars.githubusercontent.com/u/${Math.floor(Math.random() * 100000000)}" alt="Random user avatar" class="post-avatar" width="40" height="40">
+              <div class="post-author">Random User</div>
+              <div class="post-timestamp">Just now</div>
+            </div>
+            <div class="post-content">This is a dynamically loaded post to simulate infinite scrolling.</div>
+            <div class="post-actions">
+              <span class="post-action">Like</span>
+              <span class="post-action">Comment</span>
+              <span class="post-action">Share</span>
+            </div>
+          `;
+          feed.appendChild(newPost);
+        }, 500);
+      }
+    });
+  </script>
+</body></html>
